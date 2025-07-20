@@ -1,6 +1,5 @@
 describe('OrangeHRM Login Test', () => {
   it('should login with valid credentials', () => {
-    // Visit the login page
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
 
     cy.get('input[name="username"]').should('be.visible');
