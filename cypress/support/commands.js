@@ -23,3 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('apiRequest', (options) => {
+  options.headers = {
+    ...(options.headers || {}),
+    'x-api-key': Cypress.env('apiKey'),
+  };
+  return cy.request(options);
+});
