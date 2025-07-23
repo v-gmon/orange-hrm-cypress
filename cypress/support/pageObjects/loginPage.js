@@ -3,7 +3,7 @@ export class LoginPage {
         cy.intercept('POST', 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/validate').as('validateLogin');
         cy.intercept('POST', 'https://opensource-demo.orangehrmlive.com/web/index.php/events/push').as('eventRequest');
         cy.intercept('GET', 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login').as('loginRequest');
-        cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+        cy.visit('/auth/login');
     }
 
     getUsernameField() {

@@ -1,4 +1,4 @@
-import { LoginPage } from './loginPage';
+const { LoginPage } = require("../../support/pageObjects/loginPage");
 describe('OrangeHRM Invalid Login Test', () => {
   const loginPage = new LoginPage();
 
