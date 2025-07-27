@@ -1,5 +1,5 @@
 const { LoginPage } = require("../../support/pageObjects/loginPage");
-const loginCredential  = require("../../fixtures/loginCredential.json")
+const loginCredential  = require("../../fixtures/loginCredential.json");
 
 
 describe('OrangeHRM Login Test', () => {
@@ -29,4 +29,14 @@ describe('OrangeHRM Login Test', () => {
     loginPage.verifyRequiredUsernameMessage();
     loginPage.verifyRequiredPasswordMessage();
   });
+});
+
+describe('OrangeHRM - Forgot Password Test', () => {
+    const loginPage = new LoginPage();
+    it('should trigger forgot password flow', () => {
+        loginPage.visit();
+        loginPage.triggerForgotPassword();
+        loginPage.getUsernameField().type(loginCredential.user);
+        loginPage.triggerresetPassword();
+    });
 });

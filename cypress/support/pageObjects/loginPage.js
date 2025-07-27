@@ -61,4 +61,14 @@ export class LoginPage {
 
         this.getLoginButton().click();
     }
+
+    triggerForgotPassword() {
+        cy.get('p.orangehrm-login-forgot-header').click();
+        cy.url().should('include', '/requestPasswordResetCode');
+    }
+
+    triggerresetPassword() {
+        cy.get('button[type="submit"]').click();
+        cy.get('.orangehrm-forgot-password-title').should('contain', 'Reset Password link sent successfully');
+    }
 }
